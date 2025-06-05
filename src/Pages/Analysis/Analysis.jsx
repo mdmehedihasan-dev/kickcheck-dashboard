@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Analysis = () => {
   const images = [
-    '/images/sneaker1.jpg',
-    '/images/sneaker2.jpg',
-    '/images/sneaker3.jpg',
+    'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c576e5afc4db4e3e81ba2df74cd064bd_9366/Anthony_Edwards_1_Low_Shoes_Grey_JS1775_01_00_standard.jpg',
+    'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c576e5afc4db4e3e81ba2df74cd064bd_9366/Anthony_Edwards_1_Low_Shoes_Grey_JS1775_01_00_standard.jpg',
+    'https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c576e5afc4db4e3e81ba2df74cd064bd_9366/Anthony_Edwards_1_Low_Shoes_Grey_JS1775_01_00_standard.jpg',
+
+
   ];
 
   return (
@@ -12,13 +15,13 @@ const Analysis = () => {
       <h1 className="mb-6 text-xl font-semibold">← Analysis</h1>
 
       {/* Images */}
-      <div className="grid grid-cols-1 gap-4 mb-6 sm:grid-cols-2 md:grid-cols-3">
+      <div className="flex justify-between w-full mb-10">
         {images.map((src, index) => (
           <div
             key={index}
             className="overflow-hidden border-2 rounded-lg border-lime-500"
           >
-            <img src={src} alt={`Sneaker ${index + 1}`} className="object-cover w-full h-auto" />
+            <img src={src} alt={`Sneaker ${index + 1}`} className="object-cover  h-[350px]" />
           </div>
         ))}
       </div>
@@ -47,8 +50,9 @@ const Analysis = () => {
         <button className="px-6 py-2 text-red-500 transition bg-transparent border border-red-500 rounded hover:bg-red-500 hover:text-white">
           Decline
         </button>
-        <button className="px-6 py-2 text-black transition rounded bg-lime-500 hover:bg-lime-600">
-          Approve
+        <button  className="px-6 py-2 text-black transition rounded bg-lime-500 hover:bg-lime-600">
+          <Link to={'/analysis-page'}>
+          Approve</Link>
         </button>
       </div>
     </div>

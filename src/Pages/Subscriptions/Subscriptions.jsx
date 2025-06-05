@@ -118,7 +118,7 @@ const Subscriptions = () => {
       </table>
 
       {/* Pagination */}
-      <div className="flex items-center justify-between mt-4 text-sm">
+      <div className="flex items-center justify-center mt-4 text-sm gap-x-10">
         <span>
           Showing {Math.min(page * PAGE_SIZE, filteredData.length)} of {filteredData.length}
         </span>
@@ -130,7 +130,7 @@ const Subscriptions = () => {
             <button
               key={i}
               onClick={() => setPage(i + 1)}
-              className={page === i + 1 ? "text-green-500" : ""}
+              className={page === i + 1 ? "bg-green-500 p-2 rounded-full" : ""}
             >
               {i + 1}
             </button>

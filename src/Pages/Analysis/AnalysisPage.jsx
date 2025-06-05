@@ -74,8 +74,8 @@ const AnalysisPage = () => {
   return (
     <div className="min-h-screen p-4 mt-10 font-sans text-white bg-black sm:p-6">
       <div className="flex flex-col items-start justify-between gap-4 mb-6 sm:flex-row sm:items-center">
-        <h1 className="text-2xl font-semibold text-green-500 sm:text-3xl">
-          Analysis Dashboard
+        <h1 className="text-2xl font-semibold text-white sm:text-3xl">
+          Analysis 
         </h1>
         <input
           type="search"
