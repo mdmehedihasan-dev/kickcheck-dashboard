@@ -16,6 +16,7 @@ import Notifications from "../Pages/Notifications/Notifications";
 import AnalysisPage from "../Pages/Analysis/AnalysisPage";
 import FeedbackSupport from "../Pages/FeedbackSupport/FeedbackSupport";
 import Subscriptions from "../Pages/Subscriptions/Subscriptions";
+import Analysis from "../Pages/Analysis/Analysis";
 
 export const router = createBrowserRouter([
   {
@@ -43,7 +44,8 @@ export const router = createBrowserRouter([
         children: [
           { path: "/", element: <Dashboard /> },
           { path: "/dashboard", element: <Dashboard /> },
-          { path: "/analysis", element: <AnalysisPage /> },
+             { path: "/analysis", element: <Analysis /> },
+          { path: "/analysis-page", element: <AnalysisPage /> },
           { path: "/vault-management", element: <VaultManagement /> },
            { path: "/subscriptions-payment", element: <Subscriptions/> },
           { path: "/feedback-support", element: <FeedbackSupport/> },
