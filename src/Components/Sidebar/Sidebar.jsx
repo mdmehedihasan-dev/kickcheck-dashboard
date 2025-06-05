@@ -2,13 +2,14 @@ import { useState } from "react";
 import {  FiLogOut } from "react-icons/fi";
 import { BiChevronDown } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { MdDashboard, MdPrivacyTip } from "react-icons/md";
-import { FaEdit } from "react-icons/fa";
+import { MdDashboard, MdOutlineFeedback, MdOutlineSubscriptions, MdPrivacyTip } from "react-icons/md";
+import { FaEdit, FaUserPlus } from "react-icons/fa";
 import { RiMoneyDollarCircleLine, RiTerminalWindowLine } from "react-icons/ri";
 import brandlogo from "../../assets/image/kickcheck.png";
 import { IoNewspaper } from "react-icons/io5";
 import { GrUserSettings } from "react-icons/gr";
 import { CiUser } from "react-icons/ci";
+import { VscGraphLine } from "react-icons/vsc";
 
 const Sidebar = ({ closeDrawer }) => {
   const [active, setActive] = useState("Dashboard");
@@ -22,22 +23,22 @@ const Sidebar = ({ closeDrawer }) => {
       Link: "/",
     },
     {
-      icon: <IoNewspaper className="w-5 h-5" />,
+      icon: <VscGraphLine className="w-5 h-5" />,
       label: "Analysis",
       Link: "/analysis",
     },
         {
-      icon: <IoNewspaper className="w-5 h-5" />,
+      icon: <FaUserPlus className="w-5 h-5" />,
       label: "Vault Management",
       Link: "/vault-management",
     },
      {
-      icon: <IoNewspaper className="w-5 h-5" />,
+      icon: <MdOutlineSubscriptions className="w-5 h-5" />,
       label: "Subscriptions & Payment",
       Link: "/subscriptions-payment",
     },
         {
-      icon: <IoNewspaper className="w-5 h-5" />,
+      icon: <MdOutlineFeedback className="w-5 h-5" />,
       label: "Feedback & Support",
       Link: "/feedback-support",
     },
