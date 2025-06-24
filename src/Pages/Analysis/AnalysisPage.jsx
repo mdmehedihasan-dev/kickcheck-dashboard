@@ -154,7 +154,7 @@ const AnalysisPage = () => {
                     </span>
                   )}
                 </td>
-                <td className="px-4 py-3 font-semibold text-yellow-300 sm:px-6 sm:py-4">
+                <td className="px-4 py-3 font-semibold sm:px-6 sm:py-4">
                   {row.confidenceScore}
                 </td>
                 <td className="flex items-center justify-center gap-3 px-4 py-3 sm:px-6 sm:py-4">
@@ -282,28 +282,28 @@ const AnalysisPage = () => {
                 alt={selectedRow.sneakersAlt}
                 className="object-contain w-32 h-32 mx-auto mb-4 rounded-md"
               />
-              <p>
-                <span className="font-semibold text-white">Date:</span>{" "}
+              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
+                <span>Name:</span>{" "}
                 {selectedRow.date}
               </p>
-              <p>
-                <span className="font-semibold text-white">Brand:</span>{" "}
+              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
+                <span >Brand:</span>{" "}
                 {selectedRow.brand}
               </p>
-              <p>
-                <span className="font-semibold text-white">Type:</span>{" "}
+              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
+                <span>Type:</span>{" "}
                 {selectedRow.sneakersAlt}
               </p>
-              <p>
-                <span className="font-semibold text-white">AI Check:</span>{" "}
+              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
+                <span >AI Check:</span>{" "}
                 {selectedRow.aiCheck}
               </p>
-              <p>
-                <span className="font-semibold text-white">Human Check:</span>{" "}
+              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
+                <span >Human Check:</span>{" "}
                 {selectedRow.humanCheck}
               </p>
-              <p>
-                <span className="font-semibold text-white">Confidence:</span>{" "}
+              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
+                <span >Confidence:</span>{" "}
                 {selectedRow.confidenceScore}
               </p>
             </div>

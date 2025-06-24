@@ -6,12 +6,17 @@ import { AiFillDollarCircle } from "react-icons/ai";
 import User from "../../Components/Dashboard/User";
 import SneakerAuthenticateChart from "../../Components/Dashboard/SneakerAuthenticateChart";
 import { Link } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const Dashboard = () => {
   return (
     <div className="min-h-screen bg-black">
-      <div className="container p-4 mx-auto ">
-        <div className="mt-16">
+      <div className="container p-4 mx-auto mt-16 ">
+         <Link to={'/'} className="flex items-center text-white gap-x-3">
+                  <FaArrowLeftLong size={20} />
+                  <h1 className="text-2xl font-semibold ">Dashboard</h1>
+                </Link>
+        <div className="mt-5">
           <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-4">
             <InfoCard
               title="Total Users"
@@ -20,12 +25,12 @@ const Dashboard = () => {
             />
             <InfoCard
               title="Total Sneakers"
-              value="$3,530"
+              value="3,530"
               icon={<SiTicktick className="w-6 h-6 text-white" />}
             />
             <InfoCard
               title="Passed Sneakers"
-              value="$3,530"
+              value="3,530"
               icon={<SiTicktick className="w-6 h-6 text-white" />}
             />
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaArrowLeftLong } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 
 const Analysis = () => {
@@ -12,10 +13,12 @@ const Analysis = () => {
 
   return (
     <div className="min-h-screen px-6 py-8 mt-16 text-white bg-black">
-      <h1 className="mb-6 text-xl font-semibold">← Analysis</h1>
-
+       <Link to={'/'} className="flex items-center text-white gap-x-3">
+                        <FaArrowLeftLong size={20} />
+                        <h1 className="text-2xl font-semibold ">Analysis</h1>
+                      </Link>
       {/* Images */}
-      <div className="flex justify-between w-full mb-10">
+      <div className="flex justify-between w-full mt-5 mb-10">
         {images.map((src, index) => (
           <div
             key={index}

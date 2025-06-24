@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import JoditEditor from "jodit-react";
+import { FaArrowLeftLong } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const AboutUs = () => {
   const editor = useRef(null);
@@ -14,11 +16,16 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="container min-h-screen ">
-      <h2 className="mt-16 mb-6 text-2xl font-bold text-white">
-        About Us
-      </h2>
-    <div >
+    <div className="container min-h-screen mt-16 ">
+      
+                  <Link
+        to={"/"}
+        className="flex items-center mt-16 mb-6 text-white gap-x-3"
+      >
+        <FaArrowLeftLong size={20} />
+        <h1 className="text-2xl font-semibold ">  About Us</h1>
+      </Link>
+    <di className="mt-5" >
         <JoditEditor
         ref={editor}
         value={content}
@@ -32,7 +39,7 @@ const AboutUs = () => {
         Save Change
       </button>
    </div>
-    </div>
+    </di>
     </div>
   );
 };

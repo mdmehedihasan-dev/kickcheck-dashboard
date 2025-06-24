@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { CiEdit } from "react-icons/ci";
+import { FaArrowLeftLong } from "react-icons/fa6";
 import { IoEyeOutline } from "react-icons/io5";
 import { MdClose } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const PAGE_SIZE = 10;
 
@@ -63,7 +65,10 @@ const Subscriptions = () => {
   return (
     <div className="min-h-screen p-6 mt-16 font-sans text-white bg-black">
       <div className="flex items-center mb-6">
-        <h1 className="text-2xl font-semibold">← Subscription & Payment</h1>
+         <Link to={'/'} className="flex items-center text-white gap-x-3">
+                  <FaArrowLeftLong size={20} />
+                  <h1 className="text-2xl font-semibold ">Subscription & Payment</h1>
+                </Link>
         <input
           type="search"
           placeholder="Search here..."

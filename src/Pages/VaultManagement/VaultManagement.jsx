@@ -76,10 +76,10 @@ const VaultManagement = () => {
   return (
     <div className="min-h-screen p-6 mt-16 font-sans text-white bg-black">
       <div className="flex items-center mb-6">
-        <div className="flex items-center gap-x-3">
+        <Link to={'/'} className="flex items-center gap-x-3">
           <FaArrowLeftLong size={20} />
           <h1 className="text-2xl font-semibold">Vault Management</h1>
-        </div>
+        </Link>
         <input
           type="search"
           placeholder="Search here..."
@@ -119,8 +119,8 @@ const VaultManagement = () => {
               <td className="px-2 py-3">{item.category}</td>
               <td className="px-2 py-3">{item.brand}</td>
               <td className="px-2 py-3">{item.totalSneakers}</td>
-              <td className="px-2 py-3 text-green-400">{item.authentic}</td>
-              <td className="flex justify-center gap-4 px-2 py-3">
+              <td className="px-2 py-3 ">{item.authentic}</td>
+              <td className="flex justify-center gap-2 px-2 py-3">
                 <Link
                   to={`/vault-management/${item.id}`}
                   aria-label="View"

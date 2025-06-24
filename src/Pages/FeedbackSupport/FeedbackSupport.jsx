@@ -33,6 +33,7 @@ const ReplyModal = ({ isOpen, onClose, feedback }) => {
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
       <div className="relative w-full max-w-md p-6 bg-white rounded-lg">
         <h2 className="mb-4 text-lg font-semibold">Reply</h2>
+        
         <button
           onClick={onClose}
           className="absolute text-gray-600 top-3 right-3 hover:text-gray-900"

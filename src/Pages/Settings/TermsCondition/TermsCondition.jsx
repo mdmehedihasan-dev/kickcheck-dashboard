@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import JoditEditor from "jodit-react";
+import { Link } from "react-router-dom";
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const TermsCondition = () => {
   const editor = useRef(null);
@@ -15,9 +17,13 @@ const TermsCondition = () => {
 
   return (
     <div className="container min-h-screen mx-auto">
-      <h2 className="mt-16 mb-6 text-2xl font-bold text-white">
-        Terms Condition
-      </h2>
+        <Link
+        to={"/"}
+        className="flex items-center mt-16 mb-6 text-white gap-x-3"
+      >
+        <FaArrowLeftLong size={20} />
+        <h1 className="text-2xl font-semibold ">Terms Condition</h1>
+      </Link>
        <div>
          <JoditEditor
         ref={editor}
