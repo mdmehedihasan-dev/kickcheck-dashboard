@@ -107,7 +107,7 @@ const FeedbackSupport = () => {
       <div className="flex items-center mb-6">
           <Link
         to={"/"}
-        className="flex items-center mb-6 text-white gap-x-3"
+        className="flex items-center text-white gap-x-3"
       >
         <FaArrowLeftLong size={20} />
         <h1 className="text-2xl font-semibold "> Feedback & Support</h1>

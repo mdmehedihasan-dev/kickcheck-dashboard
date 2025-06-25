@@ -8,6 +8,8 @@ import ChangePass from "./ChangePass";
 
 function ProfilePage() {
   const [activeTab, setActiveTab] = useState("/settings/profile");
+    const [profilePic, setProfilePic] = useState(null); // State to manage profile picture
+
 
   // Helper to get tab title based on activeTab
   const getTabTitle = () => {
@@ -20,6 +22,14 @@ function ProfilePage() {
         return "Change Password";
       default:
         return "";
+    }
+  };
+
+    // Handle file input change for profile picture
+  const handleProfilePicChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setProfilePic(URL.createObjectURL(file)); // Create a URL for the uploaded file
     }
   };
 
@@ -40,16 +50,17 @@ function ProfilePage() {
             <div className="p-5 mt-10">
               <div className="w-[122px] relative h-[122px] mx-auto  rounded-full border-4 border-white shadow-xl flex justify-center items-center">
                 <img
-                  src=""
+                   src={profilePic || ""}
                   alt="profile"
                   className="w-32 h-32 overflow-hidden rounded-full"
+                  i want show here uploaded profile picture
                 />
                 {/* Upload Icon */}
                 <div className="absolute right-0 p-2 bg-white rounded-full shadow-md cursor-pointer bottom-2">
                   <label htmlFor="profilePicUpload" className="cursor-pointer">
                     <LuPenLine />
                   </label>
-                  <input type="file" id="profilePicUpload" className="hidden" />
+                  <input type="file" id="profilePicUpload" className="hidden" onChange={handleProfilePicChange}  />
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   LineChart,
   Line,
@@ -25,9 +25,33 @@ const data = [
 ];
 
 const User = () => {
+  // State for managing selected year
+  const [year, setYear] = useState("2025");
+
+  // Handle year change
+  const handleYearChange = (e) => {
+    setYear(e.target.value);
+    // Optionally, you can load new data based on the selected year here.
+  };
+
   return (
-    <div className="p-4 bg-black border border-green-600 rounded-lg ">
-      <h3 className="mb-4 font-semibold text-white">User</h3>
+    <div className="p-4 bg-black border border-green-600 rounded-lg">
+      <div className="flex items-center justify-between text-white">
+        <h3 className="mb-4 font-semibold text-white">User</h3>
+        <div className="flex items-center gap-4">
+          {/* Dropdown for selecting the year */}
+          <select
+            value={year}
+            onChange={handleYearChange}
+            className="p-2 text-white bg-gray-800 rounded"
+          >
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+            <option value="2023">2023</option>
+            <option value="2022">2022</option>
+          </select>
+        </div>
+      </div>
       <ResponsiveContainer width="100%" height={220}>
         <LineChart data={data} margin={{ top: 10, right: 10, left: 20, bottom: 10 }}>
           <CartesianGrid
