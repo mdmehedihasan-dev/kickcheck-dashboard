@@ -25,7 +25,7 @@ const Sidebar = ({ closeDrawer }) => {
     {
       icon: <VscGraphLine className="w-5 h-5" />,
       label: "Analysis",
-      Link: "/analysis",
+      Link: "/analysis-page",
     },
         {
       icon: <FaUserPlus className="w-5 h-5" />,
@@ -108,7 +108,7 @@ const Sidebar = ({ closeDrawer }) => {
         {filteredItems.map((item) => (
           <div key={item.label}>
             <div
-              className={`flex justify-between items-center px-5 py-2 my-5 cursor-pointer transition-all  ${
+              className={`flex justify-between items-center px-5 py-2 my-5 cursor-pointer transition-all hover:text-[#5F9E19] hover:bg-[#ffff] hover:font-semibold  ${
                 active === item.label
                   ? " text-[#5F9E19] bg-[#ffff] font-semibold"
                   : "text-white"
@@ -138,7 +138,7 @@ const Sidebar = ({ closeDrawer }) => {
                 {item.subItems.map((subItem) => (
                   <Link to={subItem.Link} key={subItem.label}>
                     <div
-                      className={` px-5 cursor-pointer my-2  transition-all ${
+                      className={` px-5 cursor-pointer my-2  transition-all hover:text-[#5F9E19] hover:bg-[#ffff] hover:font-semibold  ${
                         active === subItem.label
                           ? "bg-[#C9E6ED] text-[#5F9E19] font-semibold"
                           : "text-white"

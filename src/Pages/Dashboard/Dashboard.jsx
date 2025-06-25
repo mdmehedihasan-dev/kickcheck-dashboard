@@ -36,7 +36,7 @@ const Dashboard = () => {
 
             <InfoCard
               title="Revenue"
-              value="$$3,530"
+              value="$3,530"
               icon={<AiFillDollarCircle className="w-6 h-6 text-white" />}
             />
           </div>

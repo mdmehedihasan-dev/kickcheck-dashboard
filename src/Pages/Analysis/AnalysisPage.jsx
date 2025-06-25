@@ -1,12 +1,6 @@
 import { useState, useEffect } from "react";
-import {
-  EyeOff,
-  ChevronLeft,
-  ChevronRight,
-  X,
-  Ban,
-  Check,
-} from "lucide-react";
+import { EyeOff, ChevronLeft, ChevronRight, X, Check } from "lucide-react";
+import { Link } from "react-router-dom"; // Import Link component for routing
 
 const sneakerImage =
   "https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/c576e5afc4db4e3e81ba2df74cd064bd_9366/Anthony_Edwards_1_Low_Shoes_Grey_JS1775_01_00_standard.jpg";
@@ -60,8 +54,6 @@ const PAGE_SIZE = 10;
 const AnalysisPage = () => {
   const [page, setPage] = useState(1);
   const [data, setData] = useState([]);
-  const [selectedRow, setSelectedRow] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const generatedData = generateRandomData(1239);
@@ -74,9 +66,7 @@ const AnalysisPage = () => {
   return (
     <div className="min-h-screen p-4 mt-10 font-sans text-white bg-black sm:p-6">
       <div className="flex flex-col items-start justify-between gap-4 mb-6 sm:flex-row sm:items-center">
-        <h1 className="text-2xl font-semibold text-white sm:text-3xl">
-          Analysis 
-        </h1>
+        <h1 className="text-2xl font-semibold text-white sm:text-3xl">Analysis</h1>
         <input
           type="search"
           placeholder="Search here..."
@@ -157,26 +147,15 @@ const AnalysisPage = () => {
                 <td className="px-4 py-3 font-semibold sm:px-6 sm:py-4">
                   {row.confidenceScore}
                 </td>
-                <td className="flex items-center justify-center gap-3 px-4 py-3 sm:px-6 sm:py-4">
-                  <button
+                <td className="px-4 py-3 sm:px-6 sm:py-4">
+                  <Link
+                    to={`/analysis/${row.id}`}  // Navigate to Analysis page with ID
                     className="p-2 text-gray-400 transition-colors duration-200 rounded-full hover:text-green-500 hover:bg-gray-700"
                     title="View Details"
                     aria-label="View Details"
-                    onClick={() => {
-                      setSelectedRow(row);
-                      setIsModalOpen(true);
-                    }}
                   >
                     <EyeOff className="w-5 h-5" />
-                 
-                  </button>
-                  <button
-                    className="p-2 text-gray-400 transition-colors duration-200 rounded-full hover:text-red-500 hover:bg-gray-700"
-                    title="Block Entry"
-                    aria-label="Block Entry"
-                  >
-                    <Ban className="w-5 h-5" />
-                  </button>
+                  </Link>
                 </td>
               </tr>
             ))}
@@ -238,7 +217,7 @@ const AnalysisPage = () => {
               <span className="text-gray-500">...</span>
               <button
                 key={totalPages}
-                className={`px-4 py-2 rounded-full transition-colors duration-200 ${
+                className={`px-4 py-2 rounded-full transition-colors duration-200 $(
                   page === totalPages
                     ? "bg-green-600 text-white border-green-600 shadow-md"
                     : "bg-gray-800 border border-gray-700 text-gray-300 hover:bg-gray-700"
@@ -260,64 +239,6 @@ const AnalysisPage = () => {
           </button>
         </div>
       </div>
-
-      {/* MODAL */}
-      {isModalOpen && selectedRow && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
-          <div className="w-full max-w-lg p-6 bg-white rounded-lg shadow-xl">
-            <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-white">
-                Sneaker Details
-              </h2>
-              <button
-                className="text-gray-400 hover:text-red-500"
-                onClick={() => setIsModalOpen(false)}
-              >
-                <X className="w-6 h-6" />
-              </button>
-            </div>
-            <div className="space-y-3 text-gray-300">
-              <img
-                src={selectedRow.sneakersImg}
-                alt={selectedRow.sneakersAlt}
-                className="object-contain w-32 h-32 mx-auto mb-4 rounded-md"
-              />
-              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
-                <span>Name:</span>{" "}
-                {selectedRow.date}
-              </p>
-              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
-                <span >Brand:</span>{" "}
-                {selectedRow.brand}
-              </p>
-              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
-                <span>Type:</span>{" "}
-                {selectedRow.sneakersAlt}
-              </p>
-              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
-                <span >AI Check:</span>{" "}
-                {selectedRow.aiCheck}
-              </p>
-              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
-                <span >Human Check:</span>{" "}
-                {selectedRow.humanCheck}
-              </p>
-              <p className="p-2 font-semibold text-black bg-gray-400 rounded-md">
-                <span >Confidence:</span>{" "}
-                {selectedRow.confidenceScore}
-              </p>
-            </div>
-            <div className="flex justify-end mt-6">
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="px-4 py-2 text-sm font-semibold text-white bg-green-600 rounded-md hover:bg-green-700"
-              >
-                Close
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
