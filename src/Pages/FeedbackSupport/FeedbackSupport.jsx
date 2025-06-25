@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const PAGE_SIZE = 15;
 
@@ -32,6 +33,7 @@ const ReplyModal = ({ isOpen, onClose, feedback }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
       <div className="relative w-full max-w-md p-6 bg-white rounded-lg">
+        
         <h2 className="mb-4 text-lg font-semibold">Reply</h2>
         
         <button
@@ -103,10 +105,15 @@ const FeedbackSupport = () => {
     <div className="min-h-screen p-6 mx-auto mt-16 font-sans bg-black ">
       {/* Header */}
       <div className="flex items-center mb-6">
-        <button className="flex items-center gap-2 text-white opacity-80 hover:opacity-100">
-          <FaArrowLeftLong />
-          <span className="text-xl font-semibold">Feedback & Support</span>
-        </button>
+          <Link
+        to={"/"}
+        className="flex items-center mb-6 text-white gap-x-3"
+      >
+        <FaArrowLeftLong size={20} />
+        <h1 className="text-2xl font-semibold "> Feedback & Support</h1>
+      </Link>
+
+       
 
         <input
           type="search"

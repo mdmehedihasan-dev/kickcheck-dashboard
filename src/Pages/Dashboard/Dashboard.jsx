@@ -7,6 +7,7 @@ import User from "../../Components/Dashboard/User";
 import SneakerAuthenticateChart from "../../Components/Dashboard/SneakerAuthenticateChart";
 import { Link } from "react-router-dom";
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { PiSneakerMoveBold } from "react-icons/pi";
 
 const Dashboard = () => {
   return (
@@ -26,7 +27,7 @@ const Dashboard = () => {
             <InfoCard
               title="Total Sneakers"
               value="3,530"
-              icon={<SiTicktick className="w-6 h-6 text-white" />}
+              icon={<PiSneakerMoveBold className="w-6 h-6 text-white" />}
             />
             <InfoCard
               title="Passed Sneakers"
@@ -44,7 +45,7 @@ const Dashboard = () => {
           <div className="grid grid-cols-1 gap-4 mb-4 md:grid-cols-2">
             <div>
               {/* for user growth  */}
-              <User />
+              <User/>
             </div>
             <div>
               {/* for sneaker authenticate chart  */}

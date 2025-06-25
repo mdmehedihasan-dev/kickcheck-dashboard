@@ -10,6 +10,10 @@ import {
 } from "recharts";
 
 const data = [
+  { name: "Jan", user: 5 },
+  { name: "Feb", user: 2 },
+  { name: "Mar", user: 8 },
+  { name: "Apr", user: 3 },
   { name: "May", user: 1 },
   { name: "Jun", user: 7 },
   { name: "Jul", user: 4 },
@@ -25,7 +29,7 @@ const User = () => {
     <div className="p-4 bg-black border border-green-600 rounded-lg ">
       <h3 className="mb-4 font-semibold text-white">User</h3>
       <ResponsiveContainer width="100%" height={220}>
-        <LineChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 10 }}>
+        <LineChart data={data} margin={{ top: 10, right: 10, left: 20, bottom: 10 }}>
           <CartesianGrid
             stroke="#7ec100"
             strokeDasharray="3 3"

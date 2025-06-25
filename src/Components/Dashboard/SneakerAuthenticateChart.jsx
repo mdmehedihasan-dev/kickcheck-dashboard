@@ -10,13 +10,20 @@ import {
 } from 'recharts';
 
 const data = [
-  { name: 'Jul', value: 25, fill: '#f9fafb' }, // white-ish bar
-  { name: 'Aug', value: 20, fill: '#00ffff' }, // cyan bar
-  { name: 'Sep', value: 30, fill: '#ffb800' }, // orange bar
-  { name: 'Oct', value: 22, fill: '#00ffff' }, // cyan bar
-  { name: 'Nov', value: 16, fill: '#ffb800' }, // orange bar
-  { name: 'Dec', value: 29, fill: '#00ffff' }, // cyan bar
+  { name: 'Jan', value: 20, fill: '#f9fafb' },  // white-ish bar
+  { name: 'Feb', value: 25, fill: '#00ffff' },  // cyan bar
+  { name: 'Mar', value: 18, fill: '#ffb800' },  // orange bar
+  { name: 'Apr', value: 22, fill: '#00ffff' },  // cyan bar
+  { name: 'May', value: 28, fill: '#ffb800' },  // orange bar
+  { name: 'Jun', value: 26, fill: '#00ffff' },  // cyan bar
+  { name: 'Jul', value: 25, fill: '#f9fafb' },  // white-ish bar
+  { name: 'Aug', value: 20, fill: '#00ffff' },  // cyan bar
+  { name: 'Sep', value: 30, fill: '#ffb800' },  // orange bar
+  { name: 'Oct', value: 22, fill: '#00ffff' },  // cyan bar
+  { name: 'Nov', value: 16, fill: '#ffb800' },  // orange bar
+  { name: 'Dec', value: 29, fill: '#00ffff' },  // cyan bar
 ];
+
 
 export default function SneakerAuthenticateChart() {
   return (
